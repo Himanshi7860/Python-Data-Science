@@ -23,7 +23,7 @@ class Product(Base):
 # necessary function
 def opendb():
     engine = create_engine('sqlite:///data.sqlite')
-    return sessionmaker(blind=engine)()
+    return sessionmaker(bind=engine)()
 
 def save_product(db,product):
     db.add(product)
